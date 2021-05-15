@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: 35.236.184.74  #資料庫ip
+      WORDPRESS_DB_USER: cfc101
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress  #先在mysql建立一個該名稱資料庫
+    volumes:
+      - ~/wordpress/html:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    volumes:
+      - ~/sessions
+    ports:
+      - 40000:80
+    environment:
+      PMA_HOST: 35.236.184.74  #資料庫ip
+      PMA_USER: cfc101
+      PMA_PASSWORD: wordpress
+
+
+volumes:
+  wordpress:
+  phpmyadmin:
