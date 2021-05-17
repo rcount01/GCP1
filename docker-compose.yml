@@ -20,7 +20,7 @@ services:
       - "80:80"
     restart: always
     environment:
-      WORDPRESS_DB_HOST: 35.236.151.59
+      WORDPRESS_DB_HOST: 10.117.128.3
       WORDPRESS_DB_USER: cfc101
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
